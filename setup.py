@@ -26,5 +26,5 @@ setup(
             'gitpullall=gitpullall.gitpullall:main',
             'gpa=gitpullall.gitpullall:main'
         ]
-    },
+    }
 )
