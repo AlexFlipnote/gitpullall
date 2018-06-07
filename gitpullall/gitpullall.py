@@ -50,10 +50,13 @@ def shell():
 
     gitcounter = 0
     for g in os.listdir():
-        if os.path.isdir(g) is True and ".git" in os.listdir(g):
-            print("{}".format(g))
-            gitcounter = gitcounter + 1
-            printcmd("cd {} && git pull".format(g))
+        try:
+            if os.path.isdir(g) is True and ".git" in os.listdir(g):
+                print("{}".format(g))
+                gitcounter = gitcounter + 1
+                printcmd("cd {} && git pull".format(g))
+        except PermissionError:
+            print('{}\nSkipping this folder because no permission/wrong folder\n'.format(g))
 
     print("Successfully git pulled on {} subfolder{}".format(
         gitcounter,
@@ -67,8 +70,6 @@ def main():
         shell()
     except KeyboardInterrupt:
         print('\nCancelling...')
-    except PermissionError:
-        print('Seems like you are missing permissions to access a folder inside this directory...')
 
 
 if __name__ == '__main__':
