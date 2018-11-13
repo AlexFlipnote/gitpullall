@@ -53,8 +53,8 @@ def shell():
         try:
             if os.path.isdir(g) and ".git" in os.listdir(g):
                 print(g)
-                gitcounter += 1
                 printcmd("cd {} && git pull".format(g))
+                gitcounter += 1
         except PermissionError:
             print('{}\nSkipping this folder because no permission/wrong folder\n'.format(g))
 
