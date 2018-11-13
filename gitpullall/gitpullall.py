@@ -51,9 +51,9 @@ def shell():
     gitcounter = 0
     for g in os.listdir():
         try:
-            if os.path.isdir(g) is True and ".git" in os.listdir(g):
-                print("{}".format(g))
-                gitcounter = gitcounter + 1
+            if os.path.isdir(g) and ".git" in os.listdir(g):
+                print(g)
+                gitcounter += 1
                 printcmd("cd {} && git pull".format(g))
         except PermissionError:
             print('{}\nSkipping this folder because no permission/wrong folder\n'.format(g))
