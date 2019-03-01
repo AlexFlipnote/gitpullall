@@ -15,4 +15,4 @@ You can install this command with [Python](https://www.python.org/downloads/) us
 - Linux (Debian)
 
 ## Preview
-![Image](https://i.alexflipnote.xyz/436056.gif)
+![Image](https://i.alexflipnote.dev/436056.gif)
